@@ -96,7 +96,7 @@ workflows:
 jobs:
   test:
     docker:
-      - image: google/dart:2.9.1
+      - image: google/dart:3.2.3
     steps:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
@@ -117,7 +117,7 @@ jobs:
           name: Install Dart SDK
           command: |
             HOMEBREW_NO_AUTO_UPDATE=1 brew tap dart-lang/dart
-            HOMEBREW_NO_AUTO_UPDATE=1 brew install dart
+            HOMEBREW_NO_AUTO_UPDATE=1 brew install dart@3.2.3
       - dependencies
       - native-build
 
@@ -126,7 +126,7 @@ jobs:
     steps:
       - run:
           name: Install Dart SDK
-          command: choco install dart-sdk
+          command: choco install dart-sdk --version=3.2.3
       - dependencies:
           shell: "powershell.exe"
           pub-cache: "~/AppData/Local/Pub/Cache"
@@ -148,7 +148,7 @@ jobs:
 
             # Update again and install
             sudo apt update
-            sudo apt install dart
+            sudo apt install dart=3.2.3
 
             # Set PATH in profile for downstream commands
             echo "export PATH=$PATH:/usr/lib/dart/bin" >> $BASH_ENV
