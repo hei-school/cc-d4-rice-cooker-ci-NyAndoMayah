@@ -2,7 +2,7 @@ import CircleCI from '@circleci/circleci-config-sdk';
 
 const tsConfig = new CircleCI.Config();
 
-const tsWorkflow = new CircleCI.Workflow('tsWorkflow');
+const tsWorkflow = new CircleCI.Workflow('TSWorkflow');
 tsConfig.addWorkflow(tsWorkflow);
 
 const nodeExecutor = new CircleCI.executors.DockerExecutor('cimg/node:lts');

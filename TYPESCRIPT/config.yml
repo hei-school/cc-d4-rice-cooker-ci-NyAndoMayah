@@ -18,6 +18,6 @@ jobs:
           command: npm run test
           name: Run tests
 workflows:
-  tsWorkflow:
+  TSWorkflow:
     jobs:
       - node-test
