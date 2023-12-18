@@ -58,13 +58,10 @@ jobs:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
       - run:
-          name: move to dart
-          command: cd dart && cd cli
-      - run:
           name: Make folder for test results
           command: mkdir -p test-results/dart-tests
       - run:
           name: Run tests
-          command: pub run test
+          command: cd dart && cd cli && pub run test
       - store_test_results:
           path: test-results
