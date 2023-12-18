@@ -7,7 +7,6 @@
     "test": "mocha --require ts-node/register test/**/*.spec.ts",
     "lint": "eslint --ext .ts src"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
