@@ -17,17 +17,57 @@ Welcome to the Rice Cooker Simulator! This console-based program simulates a ric
 
 ## Installation and Usage
 
-### Dart `feat/dart`
+### Dart `feature/dart`
 
 To utilize this simulator in Dart, ensure you have the [Dart SDK](https://dart.dev/get-dart) installed. You can incorporate the Dart linter `dart analyze` by following the instructions provided [here](https://dart.dev/tools/dart-tool).
+
+To run tests for Dart, use the following command:
+```bash
+dart test path_to_test_file.dart
+```
 
 ### Ruby `feat/ruby`
 
 For Ruby, ensure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/) installed on your system. Follow the guidelines to install a suitable linter for Ruby.
 
+```bash
+gem install rspec
+```
+Run RSpec tests:
+```bash
+rspec path_to_spec_file.rb
+```
+
 ### TypeScript `feat/typescript`
 
 If you're working with TypeScript, set up the ESLint linter by referring to the documentation available [here](https://eslint.org/docs/user-guide/getting-started).
+1. Ensure you have npm installed.
+2. Add test scripts in your package.json:
+```bash
+"scripts": {
+  "test": "your_test_command"
+}
+```
+3. Run tests
+```bash
+npm test
+```
+
+### JavaScript `feat/js`
+
+If you're working with TypeScript, set up the ESLint linter by referring to the documentation available [here](https://eslint.org/docs/user-guide/getting-started).
+1. Ensure you have npm installed.
+2. Add test scripts in your package.json:
+```bash
+"scripts": {
+  "test": "your_test_command"
+}
+```
+3. Run tests
+```bash
+npm test
+```
+#### Fortunately for you, I've already followed those instructions and put it in the repository, all you have to do for JS and TS is to run npm test.
 
 ## Roadmap
 
