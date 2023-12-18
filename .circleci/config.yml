@@ -11,6 +11,9 @@ jobs:
     resource_class: medium
     steps:
       - run:
+          command: ls
+          name: list
+      - run:
           command: cd TYPESCRIPT
           name: Checkout to TYPESCRIPT directory
       - run:
