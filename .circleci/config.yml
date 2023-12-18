@@ -12,16 +12,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: ls
-          name: list
-      - run:
-          command: cd TYPESCRIPT
-          name: Checkout to TYPESCRIPT directory
-      - run:
-          command: ls
-          name: list
-      - run:
-          command: npm install
+          command: cd TYPESCRIPT && npm install
           name: NPM Install
       - run:
           command: npm run test
