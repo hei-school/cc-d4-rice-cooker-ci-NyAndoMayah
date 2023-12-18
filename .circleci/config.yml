@@ -29,6 +29,10 @@ commands:
         default: "~/.pub-cache"
     steps:
       - checkout
+      - run:
+          name: go to Dart directory
+          shell: << parameters.shell >>
+          command: cd Dart && cd cli
       - restore_cache:
           keys:
             - v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
