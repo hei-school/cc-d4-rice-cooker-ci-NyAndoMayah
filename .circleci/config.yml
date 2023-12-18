@@ -1,0 +1,27 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:3.0.0
+
+    steps:
+      - checkout
+      - run:
+          name: Run RuboCop
+          command: |
+            gem install rubocop
+            rubocop rice_cooker_simulator.rb # Replace with the actual file name to lint
+
+      - run:
+          name: Run RSpec Tests
+          command: |
+            bundle install
+            bundle exec rspec rice_cooker_spec.rb
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+

@@ -1,0 +1,4 @@
+Style/EndOfLine:
+  EnforcedStyle: lf
+Metrics/MethodLength:
+  Max: 40
