@@ -10,7 +10,6 @@ jobs:
       - image: cimg/node:lts
     resource_class: medium
     steps:
-      - checkout
       - run:
           command: cd TYPESCRIPT
           name: Checkout to TYPESCRIPT directory
