@@ -12,11 +12,14 @@ jobs:
     steps:
       - checkout
       - run:
-          command: cd TYPESCRIPT && npm install && npm run test
+          command: cd TYPESCRIPT && npm install
           name: NPM Install
       - run:
-          command: npm run test
+          command: cd TYPESCRIPT && npm run test
           name: Run tests
+      - run:
+          command: cd TYPESCRIPT && npm run lint
+          name: Run lint
 workflows:
   TSWorkflow:
     jobs:
