@@ -15,6 +15,6 @@ jobs:
           command: cd js && npm install && npm test && npm lint
           name: NPM Install and test and lint
 workflows:
-  TSWorkflow:
+  JSWorkflow:
     jobs:
       - node-test
