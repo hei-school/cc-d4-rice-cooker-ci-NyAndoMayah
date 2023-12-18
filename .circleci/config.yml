@@ -42,15 +42,15 @@ commands:
 ######################
 workflows:
   version: 2.1
-  dartWorkflow:
+  test-and-build:
     jobs:
-      - testAndAnalyze
+      - test
 
 ##################
 # Job Definitions
 ##################
 jobs:
-  testAndAnalyze:
+  test:
     docker:
       - image: google/dart:2.15.0
     steps:
@@ -67,4 +67,4 @@ jobs:
           path: test-results
       - analyze:
           name: Run analysis linter
-          command: cd dart && cd cli && analyze bin/rice_cooker.dart
+          command: cd dart && cd cli && dart analyze bin/rice_cooker.dart
