@@ -16,8 +16,8 @@ jobs:
       - run:
           name: Run RSpec Tests
           command: |
-            bundle install
-            bundle exec rspec rice_cooker_spec.rb
+            gem install rspec
+            rspec rice_cooker_spec.rb
 
 workflows:
   version: 2
