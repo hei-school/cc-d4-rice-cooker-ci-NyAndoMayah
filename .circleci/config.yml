@@ -12,14 +12,8 @@ jobs:
     steps:
       - checkout
       - run:
-          command: cd TYPESCRIPT && npm install
-          name: NPM Install
-      - run:
-          command: cd TYPESCRIPT && npm run test
-          name: Run tests
-      - run:
-          command: cd TYPESCRIPT && npm run lint
-          name: Run lint
+          command: cd TYPESCRIPT && npm install && npm test && npm lin
+          name: NPM Install and test and lint
 workflows:
   TSWorkflow:
     jobs:
