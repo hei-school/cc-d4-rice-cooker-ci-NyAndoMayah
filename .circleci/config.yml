@@ -51,5 +51,5 @@ jobs:
           path: test-results
       - run:
           name: Run analysis linter
-          command: cd dart && cd cli && dart analyze dart/cli/bin/rice_cooker.dart
+          command: cd dart && cd cli && dart analyze bin/rice_cooker.dart
 
