@@ -14,6 +14,12 @@ nodeTestJob
     .addStep(new CircleCI.commands.Checkout())
     .addStep(
         new CircleCI.commands.Run({
+            command: 'cd TYPESCRIPT',
+            name: 'Checkout to TYPESCRIPT directory'
+        })
+    )
+    .addStep(
+        new CircleCI.commands.Run({
             command: 'npm install',
             name: 'NPM Install',
         }),

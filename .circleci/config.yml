@@ -12,6 +12,9 @@ jobs:
     steps:
       - checkout
       - run:
+          command: cd TYPESCRIPT
+          name: Checkout to TYPESCRIPT directory
+      - run:
           command: npm install
           name: NPM Install
       - run:
