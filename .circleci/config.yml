@@ -30,9 +30,9 @@ commands:
     steps:
       - checkout
       - run:
-          name: go to Dart directory
+          name: go to dart directory
           shell: << parameters.shell >>
-          command: cd Dart && cd cli
+          command: cd dart && cd cli && ls
       - restore_cache:
           keys:
             - v1.4-dependencies-{{ arch }}-{{ checksum "pubspec.lock" }}
