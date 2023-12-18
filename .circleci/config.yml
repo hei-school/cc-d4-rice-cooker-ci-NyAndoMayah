@@ -12,7 +12,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: cd TYPESCRIPT && npm install
+          command: cd TYPESCRIPT && npm install && npm run test
           name: NPM Install
       - run:
           command: npm run test
