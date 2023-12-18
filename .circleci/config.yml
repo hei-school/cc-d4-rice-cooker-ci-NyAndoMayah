@@ -97,6 +97,8 @@ jobs:
   test:
     docker:
       - image: google/dart:3.2.3
+    caches:
+      - docker
     steps:
       - dependencies:
           shell: "/bin/bash -eo pipefail"
