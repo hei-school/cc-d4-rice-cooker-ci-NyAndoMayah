@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.simulateRiceCooker = exports.displayMenu = exports.RiceCooker = void 0;
 var readlineSync = require("readline-sync");
 var RiceCooker = /** @class */ (function () {
     function RiceCooker() {
@@ -92,6 +93,7 @@ var RiceCooker = /** @class */ (function () {
     };
     return RiceCooker;
 }());
+exports.RiceCooker = RiceCooker;
 function displayMenu() {
     console.log('\nWelcome to the Rice Cooker Simulator!');
     console.log('1. Add rice');
@@ -101,6 +103,7 @@ function displayMenu() {
     console.log('5. Remove rice');
     console.log('6. Quit');
 }
+exports.displayMenu = displayMenu;
 function simulateRiceCooker() {
     var riceCooker = new RiceCooker();
     var input;
@@ -143,4 +146,4 @@ function simulateRiceCooker() {
         }
     }
 }
-simulateRiceCooker();
+exports.simulateRiceCooker = simulateRiceCooker;

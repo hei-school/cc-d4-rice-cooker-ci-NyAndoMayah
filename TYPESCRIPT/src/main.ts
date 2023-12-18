@@ -1,7 +1,7 @@
 import * as readlineSync from 'readline-sync';
 
-class RiceCooker {
-  private _ricePresent: boolean = false;
+export class RiceCooker {
+  _ricePresent: boolean = false;
   private _riceCooked: boolean = false;
   private _steamingInProgress: boolean = false;
   private _heatingInProgress: boolean = false;
@@ -86,7 +86,7 @@ class RiceCooker {
 
 }
 
-function displayMenu(): void {
+export function displayMenu(): void {
   console.log('\nWelcome to the Rice Cooker Simulator!');
   console.log('1. Add rice');
   console.log('2. Cook rice');
@@ -96,7 +96,7 @@ function displayMenu(): void {
   console.log('6. Quit');
 }
 
-function simulateRiceCooker(): void {
+export function simulateRiceCooker(): void {
   const riceCooker = new RiceCooker();
   let input: string | undefined;
   const condition = true;
@@ -134,4 +134,4 @@ function simulateRiceCooker(): void {
   }
 }
 
-simulateRiceCooker();
+simulateRiceCooker()

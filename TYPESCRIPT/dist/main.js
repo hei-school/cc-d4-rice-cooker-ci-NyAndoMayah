@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.simulateRiceCooker = exports.displayMenu = exports.RiceCooker = void 0;
 var readlineSync = require("readline-sync");
 var RiceCooker = /** @class */ (function () {
     function RiceCooker() {
         this._ricePresent = false;
         this._riceCooked = false;
+        this._steamingInProgress = false;
         this._heatingInProgress = false;
     }
     RiceCooker.prototype.addRice = function () {
@@ -28,6 +30,21 @@ var RiceCooker = /** @class */ (function () {
         }
         else {
             console.log('The rice is already cooked.');
+        }
+    };
+    RiceCooker.prototype.steam = function () {
+        if (this._ricePresent && !this._steamingInProgress) {
+            console.log('Steaming in progress...');
+            this._steamingInProgress = true;
+            this.delaySync(1500);
+            this._steamingInProgress = false;
+            console.log('Steaming completed!');
+        }
+        else if (!this._ricePresent) {
+            console.log('Cannot steam. The rice cooker is empty.');
+        }
+        else {
+            console.log('Steaming is already in progress.');
         }
     };
     RiceCooker.prototype.keepWarm = function () {
@@ -76,14 +93,17 @@ var RiceCooker = /** @class */ (function () {
     };
     return RiceCooker;
 }());
+exports.RiceCooker = RiceCooker;
 function displayMenu() {
     console.log('\nWelcome to the Rice Cooker Simulator!');
     console.log('1. Add rice');
     console.log('2. Cook rice');
-    console.log('3. Keep warm');
-    console.log('4. Remove rice');
-    console.log('5. Quit');
+    console.log('3. Steam rice');
+    console.log('4. Keep warm');
+    console.log('5. Remove rice');
+    console.log('6. Quit');
 }
+exports.displayMenu = displayMenu;
 function simulateRiceCooker() {
     var riceCooker = new RiceCooker();
     var input;
@@ -101,12 +121,15 @@ function simulateRiceCooker() {
                     riceCooker.cookRice();
                 }
                 else if (choice === 3) {
-                    riceCooker.keepWarm();
+                    riceCooker.steam();
                 }
                 else if (choice === 4) {
-                    riceCooker.removeRice();
+                    riceCooker.keepWarm();
                 }
                 else if (choice === 5) {
+                    riceCooker.removeRice();
+                }
+                else if (choice === 6) {
                     console.log('Thank you for using the Rice Cooker Simulator. Goodbye!');
                     break;
                 }
@@ -123,4 +146,4 @@ function simulateRiceCooker() {
         }
     }
 }
-simulateRiceCooker();
+exports.simulateRiceCooker = simulateRiceCooker;
